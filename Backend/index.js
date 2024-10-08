@@ -9,7 +9,7 @@ const cors= require('cors')
 dotenv.config()
 
 const allowedOrigins = [
-    "https://ministore-frontend.onrender.com",
+    "https://ministore-frontend-kz24.onrender.com",
     "https://ministore-admin.onrender.com" 
 ];
 
