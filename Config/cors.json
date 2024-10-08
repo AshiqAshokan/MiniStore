@@ -1,8 +1,10 @@
 [
-    {
-      "origin": ["http://localhost:4000"],
-      "method": ["GET", "POST", "PUT", "DELETE"],
-      "maxAgeSeconds": 3600
-    }
-  ]
-  
+  {
+    "origin": [
+      "https://ministore-frontend.onrender.com",
+      "https://ministore-admin.onrender.com"  
+    ],
+    "method": ["GET", "POST", "PUT", "DELETE"],
+    "maxAgeSeconds": 3600
+  }
+]
