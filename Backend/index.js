@@ -24,6 +24,18 @@ mongoose.connect(process.env.MONGO_URL).then(()=>{
 }).catch((err)=>{
     console.log(err)
 })
+app.use(cors({
+    origin: function (origin, callback) {
+        
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    credentials: true, 
+})); 
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
@@ -37,18 +49,7 @@ app.use('/api/payment',PaymentRoutes)
 app.use(notFound);
 app.use(errorHandler);
 
-app.use(cors({
-    origin: function (origin, callback) {
-        
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    credentials: true, 
-}));
+
 
 
 app.listen(port,()=>{
