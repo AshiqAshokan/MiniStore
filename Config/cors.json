@@ -1,8 +1,8 @@
 [
   {
     "origin": [
-      "https://ministore-frontend.onrender.com",
-      "https://ministore-admin.onrender.com"  
+      "https://ministore-frontend-kz24.onrender.com",
+    "https://ministore-admin.onrender.com" , 
     ],
     "method": ["GET", "POST", "PUT", "DELETE"],
     "maxAgeSeconds": 3600
