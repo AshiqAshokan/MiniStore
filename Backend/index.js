@@ -8,6 +8,11 @@ const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 const cors= require('cors')
 dotenv.config()
 
+const allowedOrigins = [
+    "https://ministore-frontend.onrender.com",
+    "https://ministore-admin.onrender.com" 
+];
+
 const UserRoutes=require("./Routes/Users")
 const AdminRoutes=require("./Routes/AdminRoutes")
 const ProductRoutes=require("./Routes/ProductRoutes")
@@ -34,15 +39,17 @@ app.use(errorHandler);
 
 app.use(cors({
     origin: function (origin, callback) {
-        const allowedOriginsPattern = /http:\/\/localhost:(3001|4000)/;
-        if (allowedOriginsPattern.test(origin) || !origin) {
+        
+        if (!origin || allowedOrigins.includes(origin)) {
             callback(null, true);
         } else {
+            
             callback(new Error('Not allowed by CORS'));
         }
     },
-    credentials: true,
+    credentials: true, 
 }));
+
 
 app.listen(port,()=>{
     console.log(`server is running on port ${port}`)
