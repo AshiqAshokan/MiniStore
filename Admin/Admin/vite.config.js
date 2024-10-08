@@ -7,7 +7,7 @@ export default defineConfig({
     port: 4000,
     proxy: {
       '/api': {
-        target: 'http://localhost:7000', // Backend server
+        target: 'https://ministore-backend.onrender.com', // Backend server
         changeOrigin: true,
       },
     },
