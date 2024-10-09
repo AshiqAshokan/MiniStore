@@ -208,8 +208,12 @@ const UserNavbar = () => {
                 <li>
                   <Link to="/profile">Profile</Link>
                 </li>
+                 <li>
+              <Link to="/orders">Orders</Link>
+
+              </li>
                 <li>
-                  <button onClick={handleLogout} className="ml-3">Logout</button>
+                  <button onClick={handleLogout}>Logout</button>
                 </li>
               </ul>
             </div>
