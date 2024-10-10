@@ -121,9 +121,6 @@ const AdminNavbar = () => {
                 <div className="mt-2 bg-gray-200 rounded-lg shadow w-full z-50">
                   <ul className="text-sm text-gray-700">
                     <li>
-                      <Link to="/login" className="block px-4 py-2 hover:bg-gray-100">User</Link>
-                    </li>
-                    <li>
                       <Link to="/adminlogin" className="block px-4 py-2 hover:bg-gray-100">Admin</Link>
                     </li>
                   </ul>
